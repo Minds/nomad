@@ -1,0 +1,7 @@
+{
+  "name": "nomad-blockchain",
+  "dependencies": {
+    "ethereumjs-abi": "^0.6.4",
+    "zeppelin-solidity": "1.11.0"
+  }
+}
