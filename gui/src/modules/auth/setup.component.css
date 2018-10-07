@@ -1,0 +1,23 @@
+:local(.input) { 
+    padding: 16px;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    border-radius: 32px;
+    font-size: 16px;
+    background-color: #555;
+    border: 0;
+    -webkit-appearance: none;
+    color: #888;
+}
+
+:local(.input:focus) {
+    -webkit-appearance: none;
+    outline-width: 0;
+}
+
+:local(.wrapper) {
+    width: 300px;
+    padding-top: 100px;
+    text-align: right;
+    margin: auto;
+}

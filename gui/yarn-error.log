@@ -1,0 +1,57 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+
+Yarn version: 
+  1.0.2
+
+Node version: 
+  8.4.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "nomad",
+    "version": "1.0.0",
+    "description": "Decentralized social networking prototype",
+    "main": "index.js",
+    "dependencies": {
+      "webpack-cli": "^3.1.2"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.1.2",
+      "@babel/loader": "^7.1.2",
+      "@babel/preset-es2015": "^7.1.2",
+      "babel-loader": "^8.0.4",
+      "react": "^16.5.2",
+      "webpack": "^4.20.2"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@babel%2floader: Not found
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:60302:18)
+      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:117370:22)
+      at emitTwo (events.js:125:13)
+      at Request.emit (events.js:213:7)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:118353:10)
+      at emitOne (events.js:115:13)
+      at Request.emit (events.js:210:7)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:118273:12)
+      at Object.onceWrapper (events.js:314:30)
+      at emitNone (events.js:110:20)

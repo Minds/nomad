@@ -1,0 +1,6 @@
+:local(.wrapper) {
+    width: 300px;
+    padding-top: 100px;
+    text-align: right;
+    margin: auto;
+}
