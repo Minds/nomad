@@ -1,0 +1,64 @@
+:local(.card) { 
+
+    border-radius: 6px;
+    background: #555;
+    padding: 16px;
+    margin-bottom: 8px;
+    color: #ddd;
+
+}
+
+:local(.ownerBlock) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+:local(.ownerBlockBody) {
+    display: flex;
+    flex-direction: column;
+}
+
+:local(.ownerBlockBody strong) {
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+}
+
+:local(.ownerBlockBody span) {
+    font-size: 11px;
+    color: #888;
+}
+
+:local(.validated) {
+    color: #FFF !important;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+:local(.avatarPlaceholder) {
+
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: #222;
+    margin-right: 8px;
+
+}
+
+:local(.card textarea) {
+    border: 0;
+    background-color: #666;
+    color: #ddd;
+    font-size: 16px;
+    padding: 8px;
+    width: 100%;
+}
+
+:local(.card textarea::-webkit-input-placeholder) {
+    color: #ddd !important;
+}
+
+:local(.postButton) {
+    background-color: #666;
+    margin: 8px 0;
+}

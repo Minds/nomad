@@ -98,6 +98,12 @@ export default class AuthService {
         return await web3.eth.sign(JSON.stringify(object), address);
     }
 
+    logout() {
+        window.sessionStorage.clear();
+        this.username = '';
+        this.privateKey = null;
+    }
+
     static build() {
         return this._ || (this._ = new AuthService);
     }

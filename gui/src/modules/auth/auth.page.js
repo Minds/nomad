@@ -10,7 +10,7 @@ export default class AuthPage extends Component {
     render() {
         return (
             <div class="n-auth">
-                { this.auth.username && <Redirect to={'/profile/' + this.auth.username} /> }
+                { this.auth.username && <Redirect to="/newsfeed" /> }
                 <Setup />
             </div>
         );

@@ -66,7 +66,7 @@ export default class Setup extends Component {
     render() {
         return (
             <div class="n-form n-grid" className={style.wrapper}>
-                { this.state.loggedin && <Redirect to={"/profile/" + this.state.username} /> }
+                { this.state.loggedin && <Redirect to="/newsfeed" /> }
                 <div class="n-grid__row">
                     <label>Username</label> 
                     <input 

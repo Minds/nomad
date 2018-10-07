@@ -37,6 +37,10 @@ export default class App extends Component {
                     <Route path="/posts" component={PostsPage}/>
                     <Route path="/profile/:username" component={ProfilePage}/>
                 </div>
+
+                { this.auth.username && <footer>
+                    You are logged in as {this.auth.username}. <span onClick={this.auth.logout.bind(this)}>Logout</span>
+                </footer> }
             </div>
         );
     }
