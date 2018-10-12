@@ -5,7 +5,7 @@ Nomad is a decentralised social network. No centralised servers are required in 
 ## Demo
 
 - You will need the [Beaker Browser](https://beakerbrowser.com) or another DAT compatible browser
-- Navigate to dat://nomad.minds.com/
+- Navigate to [dat://nomad.minds.com/](dat://nomad.minds.com/)
 
 ## GUI
 
