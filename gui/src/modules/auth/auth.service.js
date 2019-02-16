@@ -1,5 +1,5 @@
 import { web3 } from '../web3.factory';
-import { UsernamesContract } from '../blockchain/contracts/usernames.factory';
+import { UsernamesContract, USERNAMES_CONTRACT_ADDRESS } from '../blockchain/contracts/usernames.factory';
 
 export default class AuthService {
 
@@ -33,16 +33,30 @@ export default class AuthService {
     }
 
     async register(username) {
-        let address = await web3.eth.personal.importRawKey(this.privateKey, '');
-        await web3.eth.personal.unlockAccount(address, ''); //unlock
+        let response = await web3.eth.accounts.privateKeyToAccount(this.privateKey);
 
+        let address = response.address;
+
+        console.log(response, address);
+        
         try {
-            let tx = await UsernamesContract.methods.register(
+            let abi = await UsernamesContract.methods.register(
                         web3.utils.toHex(username),
                         address,
                         web3.utils.toHex(this.datUri)
-                    )
-                    .send({ from: address, gas: 440000 });
+                    ).encodeABI();
+          
+            let signedTx = await web3.eth.accounts.signTransaction({
+                from: address,
+                to: USERNAMES_CONTRACT_ADDRESS,
+                gas: 440000,
+                data: abi,
+            }, this.privateKey);      
+
+            console.log(signedTx);
+
+            let tx = await web3.eth.sendSignedTransaction(signedTx.rawTransaction);
+            console.log(tx);
 
             this.username = username;
             // we have the tx, now save this to our profile.json
@@ -62,8 +76,8 @@ export default class AuthService {
     }
 
     async login(username) {
-        let address = await web3.eth.personal.importRawKey(this.privateKey, '');
-        await web3.eth.personal.unlockAccount(address, ''); //unlock
+        let response = await web3.eth.accounts.privateKeyToAccount(this.privateKey);
+        let address = response.address;
 
         try {
             let owner = await UsernamesContract.methods.getUsernameOwner(web3.utils.toHex(username)).call();
@@ -92,10 +106,11 @@ export default class AuthService {
     }
 
     async sign(object) {
-        let address = await web3.eth.personal.importRawKey(this.privateKey, '');
-        await web3.eth.personal.unlockAccount(address, ''); //unlock
+        //let address = await web3.eth.personal.importRawKey(this.privateKey, '');
+        //await web3.eth.personal.unlockAccount(address, ''); //unlock
 
-        return await web3.eth.sign(JSON.stringify(object), address);
+        let signed = await web3.eth.accounts.sign(JSON.stringify(object), this.privateKey);
+        return signed.signature;
     }
 
     logout() {

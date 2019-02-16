@@ -1,6 +1,6 @@
 import { web3 } from '../../web3.factory';
 
-const USERNAMES_CONTRACT_ADDRESS = '0xb87db38433d421d1de7f18ff67ae460925f4c608';
+export const USERNAMES_CONTRACT_ADDRESS = '0x0093b9e1fcd792b9876a2281af876de50595d24c';
 
 const abi = [
     {
